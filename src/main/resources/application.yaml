@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    stream:
+      defaultBinder: 'kafka'
+      kafka:
+        binder:
+          brokers: localhost:9092
+          replication-factor: 1
+      bindings:
+        greetings-in:
+          destination: greetings
+          contentType: application/json
+        greetings-out:
+#          producer:
+#            headerMode: embeddedHeaders
+          destination: greetings
+          contentType: application/json
+
+  main:
+    allow-bean-definition-overriding: true
