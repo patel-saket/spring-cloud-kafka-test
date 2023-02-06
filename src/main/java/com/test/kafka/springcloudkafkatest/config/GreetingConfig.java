@@ -1,5 +1,6 @@
 package com.test.kafka.springcloudkafkatest.config;
 
+import com.test.kafka.springcloudkafkatest.service.GreetingsListener;
 import com.test.kafka.springcloudkafkatest.service.GreetingsService;
 import com.test.kafka.springcloudkafkatest.stream.GreetingsStreams;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -19,6 +20,11 @@ public class GreetingConfig {
 	@Bean
 	public GreetingsService greetingsService() {
 		return new GreetingsService();
+	}
+
+	@Bean
+	public GreetingsListener greetingsListener() {
+		return new GreetingsListener();
 	}
 
 }

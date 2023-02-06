@@ -15,6 +15,12 @@ spring:
 #            headerMode: embeddedHeaders
           destination: greetings
           contentType: application/json
+  zipkin:
+    baseUrl: http://localhost:9411
+    enabled: true
+    encoder: json-v1
+    sender:
+      type: web
 
   main:
     allow-bean-definition-overriding: true
